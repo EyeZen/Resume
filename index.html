@@ -11,188 +11,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
 
     <script src="https://kit.fontawesome.com/b55e9fd794.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
 </head>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-size: 16px;
-
-    }
-    html, body {
-        width: 100%;
-        height: 100%;
-        background-color: rgb(231, 223, 205);
-        font-family: 'Inter', sans-serif;
-    }
-
-    .container {
-        width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 10%;
-
-        overflow: hidden;
-        border-radius: 50px;
-    }
-
-    /* Profile Header */
-    .header {
-        display: grid;
-        grid-template-columns: 80% 20%;
-        padding: 5%;
-        background-color: white;
-
-        padding-bottom: 5em;
-
-        border-bottom-style: solid;
-        border-bottom-width: 0.3rem;
-        border-bottom-color: rgb(236, 133, 150);
-    }
-    .info-profile {
-        display: flex;
-        flex-direction: column; 
-    }
-    .info-profile > h1 {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-    }
-    .info-data {
-        display: flex;
-        flex-direction: row;
-        font-size: 0.5rem;
-        color: #555;
-        line-height: 1.5rem;
-
-        white-space: nowrap;
-        overflow: hidden;   
-        text-overflow: ellipsis;
-    }
-    .info-data > * {
-        padding-right: 5px;
-    }
-    .profile-pic {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: white;
-    }
-    .profile-pic > img {
-        width: 80%;
-        height: 80%;
-        border-radius: 50%;
-        object-fit: fill;
-    }
-
-    /* Main-Body sections */
-    .main {
-        width: 100%;
-        display: grid;
-        grid-template-columns: 45% 45%;
-        justify-content: space-between;
-        color: rgba(209, 204, 204, 0.87);
-        background-color: black;
-        padding: 5%;
-        line-height: 1.2rem;
-    }
-    .element {
-        margin-bottom: 3rem;
-    }
-    .element > h3 {
-        color: rgb(250, 73, 102);
-        font-weight: bold;
-        margin-bottom: 2rem;    
-    }
-    .data-info {
-        margin-bottom: 2rem;
-    }
-    .list {
-        margin-left: 1em;
-    }
-    .sub-topic {
-        color: white;
-        font-weight: bold;
-        font-size: 1.1em;
-        line-height: 1.5rem;
-        display: flex;
-        align-items: center;
-        margin-bottom: 0.2em;
-    }
-    .sub-topic > .icon {
-        padding-right: 0.5em;
-    }
-    .data-date {
-        display: flex;
-        flex-direction: row;
-    }
-    .data-grid {
-        display: grid;
-        grid-template-columns: 30% 30% 30%;
-    }
-    .grid-item {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-    .skill-element {
-        display: grid;
-        grid-template-columns: 50% 50%;
-        width: 100%;
-        align-items: center;
-    }
-    .progress-bar {
-        height: 0.1em;
-        background-color: white;
-        display:flex;
-        align-items: center;
-        position: relative;
-    }
-    .progress-bar::before {
-        content: " ";
-        width: var(--progress-value);
-        height: 0.2em;
-        background-color: white
-    }
-    .progress-bar::after {
-        content: " ";
-        border-radius: 50%;
-        width: 0.5em;
-        height: 0.5em;
-        background: rgb(248, 112, 135);
-        position: absolute;
-        left: calc(var(--progress-value) - 0.5em);
-    }
-    .progress {
-        display: none;
-        width: var(--progress-value);
-        height: 0.2em;
-        background-color: white
-    }
-    .progress-selector {
-        display: none;
-        border-radius: 50%;
-        width: 0.5em;
-        height: 0.5em;
-        background: rgb(248, 112, 135);
-        position: absolute;
-        left: calc(var(--progress-value) - 0.5em);
-    }
-    .skill-element {
-        margin-bottom: 0.2em;
-    }
-
-    .icon {
-        margin-right: 0.2em;
-        margin-left: 0.2em;
-    }
-    .grid-item > .icon {
-        font-size: 2rem;
-        margin-bottom: 0.2em;
-    }
-</style>
 <body>
     <div class="container">
         <div class="header">
@@ -217,7 +38,7 @@
                 </div>
             </div>
             <div class="profile-pic">
-                <img src="./res/prof_pic.jpeg" alt="#" class="icon">
+                <img src="./res/prof_pic.jpeg" alt="profile pic" class="icon" style="--size: 80%;">
             </div>
         </div>
         <main class="main">
@@ -281,73 +102,43 @@
                     <div class="element-data">
                         <div class="skill-element">
                             <div class="skill-name">Siebel-Call Center</div>
-                            <div class="progress-bar" style="--progress-value: 100%">
-                                <div class="progress"></div>
-                                <div class="progress-selector"></div>
-                            </div>
+                            <div class="progress-bar" style="--progress-value: 100%"></div>
                         </div>
                         <div class="skill-element">
                             <div class="skill-name">Web Services</div>
-                            <div class="progress-bar" style="--progress-value: 80%">
-                                <div class="progress"></div>
-                                <div class="progress-selector"></div>
-                            </div>
+                            <div class="progress-bar" style="--progress-value: 80%"></div>
                         </div>
                         <div class="skill-element">
                             <div class="skill-name">XML</div>
-                            <div class="progress-bar" style="--progress-value: 80%">
-                                <div class="progress"></div>
-                                <div class="progress-selector"></div>
-                            </div>
+                            <div class="progress-bar" style="--progress-value: 80%"></div>
                         </div>
                         <div class="skill-element">
                             <div class="skill-name">Siebel EAI</div>
-                            <div class="progress-bar" style="--progress-value: 100%">
-                                <div class="progress"></div>
-                                <div class="progress-selector"></div>
-                            </div>
+                            <div class="progress-bar" style="--progress-value: 100%"></div>
                         </div>
                         <div class="skill-element">
                             <div class="skill-name">Javascript</div>
-                            <div class="progress-bar" style="--progress-value: 80%">
-                                <div class="progress"></div>
-                                <div class="progress-selector"></div>
-                            </div>
+                            <div class="progress-bar" style="--progress-value: 80%"></div>
                         </div>
                         <div class="skill-element">
                             <div class="skill-name">Java</div>
-                            <div class="progress-bar" style="--progress-value: 60%;">
-                                <div class="progress"></div>
-                                <div class="progress-selector"></div>
-                            </div>
+                            <div class="progress-bar" style="--progress-value: 60%;"></div>
                         </div>
                         <div class="skill-element">
                             <div class="skill-name">PLSQL</div>
-                            <div class="progress-bar" style="--progress-value: 60%">
-                                <div class="progress"></div>
-                                <div class="progress-selector"></div>
-                            </div>
+                            <div class="progress-bar" style="--progress-value: 60%"></div>
                         </div>
                         <div class="skill-element">
                             <div class="skill-name">Siebel SFA</div>
-                            <div class="progress-bar" style="--progress-value: 100%">
-                                <div class="progress"></div>
-                                <div class="progress-selector"></div>
-                            </div>
+                            <div class="progress-bar" style="--progress-value: 100%"></div>
                         </div>
                         <div class="skill-element">
                             <div class="skill-name">Siebel Marketing</div>
-                            <div class="progress-bar" style="--progress-value: 80%">
-                                <div class="progress"></div>
-                                <div class="progress-selector"></div>
-                            </div>
+                            <div class="progress-bar" style="--progress-value: 80%"></div>
                         </div>
                         <div class="skill-element">
                             <div class="skill-name">AWS</div>
-                            <div class="progress-bar" style="--progress-value: 60%">
-                                <div class="progress"></div>
-                                <div class="progress-selector"></div>
-                            </div>
+                            <div class="progress-bar" style="--progress-value: 60%"></div>
                         </div>
                     </div>
                 </div>
@@ -359,17 +150,11 @@
                     <div class="element-data">
                         <div class="skill-element">
                             <div class="skill-name">English</div>
-                            <div class="progress-bar" style="--progress-value: 100%">
-                                <div class="progress"></div>
-                                <div class="progress-selector"></div>
-                            </div>
+                            <div class="progress-bar" style="--progress-value: 100%"></div>
                         </div>
                         <div class="skill-element">
                             <div class="skill-name">Turkish</div>
-                            <div class="progress-bar" style="--progress-value: 100%">
-                                <div class="progress"></div>
-                                <div class="progress-selector"></div>
-                            </div>
+                            <div class="progress-bar" style="--progress-value: 100%"></div>
                         </div>
                     </div>
                 </div>
