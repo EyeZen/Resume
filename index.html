@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/b55e9fd794.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+
+    }
+    html, body {
+        width: 100%;
+        height: 100%;
+        background-color: rgb(231, 223, 205);
+        font-family: 'Inter', sans-serif;
+    }
+
+    .container {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+
+        overflow: hidden;
+        border-radius: 50px;
+    }
+
+    /* Profile Header */
+    .header {
+        display: grid;
+        grid-template-columns: 80% 20%;
+        padding: 5%;
+        background-color: white;
+
+        padding-bottom: 5em;
+
+        border-bottom-style: solid;
+        border-bottom-width: 0.3rem;
+        border-bottom-color: rgb(236, 133, 150);
+    }
+    .info-profile {
+        display: flex;
+        flex-direction: column; 
+    }
+    .info-profile > h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    .info-data {
+        display: flex;
+        flex-direction: row;
+        font-size: 0.5rem;
+        color: #555;
+        line-height: 1.5rem;
+
+        white-space: nowrap;
+        overflow: hidden;   
+        text-overflow: ellipsis;
+    }
+    .info-data > * {
+        padding-right: 5px;
+    }
+    .profile-pic {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+    }
+    .profile-pic > img {
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        object-fit: fill;
+    }
+
+    /* Main-Body sections */
+    .main {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        justify-content: space-between;
+        color: rgba(209, 204, 204, 0.87);
+        background-color: black;
+        padding: 5%;
+        line-height: 1.2rem;
+    }
+    .element {
+        margin-bottom: 3rem;
+    }
+    .element > h3 {
+        color: rgb(250, 73, 102);
+        font-weight: bold;
+        margin-bottom: 2rem;    
+    }
+    .data-info {
+        margin-bottom: 2rem;
+    }
+    .list {
+        margin-left: 1em;
+    }
+    .sub-topic {
+        color: white;
+        font-weight: bold;
+        font-size: 1.1em;
+        line-height: 1.5rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.2em;
+    }
+    .sub-topic > .icon {
+        padding-right: 0.5em;
+    }
+    .data-date {
+        display: flex;
+        flex-direction: row;
+    }
+    .data-grid {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+    }
+    .grid-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .skill-element {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 100%;
+        align-items: center;
+    }
+    .progress-bar {
+        height: 0.1em;
+        background-color: white;
+        display:flex;
+        align-items: center;
+        position: relative;
+    }
+    .progress-bar::before {
+        content: " ";
+        width: var(--progress-value);
+        height: 0.2em;
+        background-color: white
+    }
+    .progress-bar::after {
+        content: " ";
+        border-radius: 50%;
+        width: 0.5em;
+        height: 0.5em;
+        background: rgb(248, 112, 135);
+        position: absolute;
+        left: calc(var(--progress-value) - 0.5em);
+    }
+    .progress {
+        display: none;
+        width: var(--progress-value);
+        height: 0.2em;
+        background-color: white
+    }
+    .progress-selector {
+        display: none;
+        border-radius: 50%;
+        width: 0.5em;
+        height: 0.5em;
+        background: rgb(248, 112, 135);
+        position: absolute;
+        left: calc(var(--progress-value) - 0.5em);
+    }
+    .skill-element {
+        margin-bottom: 0.2em;
+    }
+
+    .icon {
+        margin-right: 0.2em;
+        margin-left: 0.2em;
+    }
+    .grid-item > .icon {
+        font-size: 2rem;
+        margin-bottom: 0.2em;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="info-profile">
+                <h1>Tancy Badien</h1>
+                <div class="info-profile-content">
+                    <div class="info-data">
+                        <i class="icon fa fa-user"></i>
+                        <div>11/11/1988</div>
+                    </div>
+                    <div class="info-data">
+                        <i class="icon fa fa-map-marker"></i>
+                        <div>Camtepe Mah. Cad. 99/2 Narlidere, Izmir 9999, Turkey</div>
+    
+                        <i class="icon fa fa-mobile"></i>
+                        <div>+999999999999</div>
+                    </div>
+                    <div class="info-data">
+                        <i class="icon fa fa-envelope-o"></i>
+                        <div>hello@kickresume.com</div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-pic">
+                <img src="./res/prof_pic.jpeg" alt="#" class="icon">
+            </div>
+        </div>
+        <main class="main">
+            <div class="section">
+                <div class="element">
+                    <h3>Profile</h3>
+                    <div class="element-data">
+                        <p class="data-info">I am a driven individual with the ability to adapt to any situation and proven potential to grow self and others.</p>
+                    </div>
+                </div>
+                <div class="element">
+                    <h3>Work experience</h3>
+                    <div class="element-data">
+                        <div class="data-date">
+                            <i class="icon fa fa-calendar-o"></i>
+                            <span class="date-from">02/2011</span>
+                            <span>-</span>
+                            <span class="date-to">Present</span>
+                            <i class="icon fa fa-map-marker"></i>
+                            <div class="location">ANKARA, TURKEY</div>
+                        </div>
+                        <h4 class="sub-topic">Software Engineer Team Lead</h4>
+                        <p class="data-info">I started at Accenture in 2011 as a New Graduate hire, in the years following I worked in major deliveries and CR management projects in communications industry.</p>
+                        <p class="data-info">
+                            <ul class="list">
+                                <li>Managed the Siebel CRM Development team</li>
+                                <li>Acted as a contact point between the technical team, functional team and test teams</li>
+                                <li>Performed requirements analysis, design, development and test management of monthly 100M/D releases</li>
+                                <li>Estimated, performed feasibility analysis and forecast risks and planned the delivery for new requirements</li>
+                                <li>Contributed to each project delivery phase(analysis, development,test,ops) in different roles</li>
+                                <li>Delivered new feature in both Agile and SDLC life-cycles</li>
+                                <li>Established self as a CRM Expert and gained trust of clients</li>
+                                <li>Automated build, delivery nad release of Siebel packages</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="element">
+                    <h3>Education</h3>
+                    <div class="element-data">
+                        <div class="data-date">
+                            <i class="icon fa fa-calendar-o"></i>
+                            <span class="date-from">09/2006</span>
+                            <span>-</span>
+                            <span class="date-to">11/2010</span>
+                            <i class="icon fa fa-map-marker"></i>
+                            <div class="location">ANKARA, TURKEY</div>
+                        </div>
+                        <h4 class="sub-topic">Computer Engineering</h4>
+                        <h4 class="sub-topic">Hacettepe University</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="section">
+                <div class="element">
+                    <h3>Skills</h3>
+                    <div class="sub-topic">
+                        <i class="icon fa fa-info-circle"></i>
+                        <h3>Development Skills</h3>
+                    </div>
+                    <div class="element-data">
+                        <div class="skill-element">
+                            <div class="skill-name">Siebel-Call Center</div>
+                            <div class="progress-bar" style="--progress-value: 100%">
+                                <div class="progress"></div>
+                                <div class="progress-selector"></div>
+                            </div>
+                        </div>
+                        <div class="skill-element">
+                            <div class="skill-name">Web Services</div>
+                            <div class="progress-bar" style="--progress-value: 80%">
+                                <div class="progress"></div>
+                                <div class="progress-selector"></div>
+                            </div>
+                        </div>
+                        <div class="skill-element">
+                            <div class="skill-name">XML</div>
+                            <div class="progress-bar" style="--progress-value: 80%">
+                                <div class="progress"></div>
+                                <div class="progress-selector"></div>
+                            </div>
+                        </div>
+                        <div class="skill-element">
+                            <div class="skill-name">Siebel EAI</div>
+                            <div class="progress-bar" style="--progress-value: 100%">
+                                <div class="progress"></div>
+                                <div class="progress-selector"></div>
+                            </div>
+                        </div>
+                        <div class="skill-element">
+                            <div class="skill-name">Javascript</div>
+                            <div class="progress-bar" style="--progress-value: 80%">
+                                <div class="progress"></div>
+                                <div class="progress-selector"></div>
+                            </div>
+                        </div>
+                        <div class="skill-element">
+                            <div class="skill-name">Java</div>
+                            <div class="progress-bar" style="--progress-value: 60%;">
+                                <div class="progress"></div>
+                                <div class="progress-selector"></div>
+                            </div>
+                        </div>
+                        <div class="skill-element">
+                            <div class="skill-name">PLSQL</div>
+                            <div class="progress-bar" style="--progress-value: 60%">
+                                <div class="progress"></div>
+                                <div class="progress-selector"></div>
+                            </div>
+                        </div>
+                        <div class="skill-element">
+                            <div class="skill-name">Siebel SFA</div>
+                            <div class="progress-bar" style="--progress-value: 100%">
+                                <div class="progress"></div>
+                                <div class="progress-selector"></div>
+                            </div>
+                        </div>
+                        <div class="skill-element">
+                            <div class="skill-name">Siebel Marketing</div>
+                            <div class="progress-bar" style="--progress-value: 80%">
+                                <div class="progress"></div>
+                                <div class="progress-selector"></div>
+                            </div>
+                        </div>
+                        <div class="skill-element">
+                            <div class="skill-name">AWS</div>
+                            <div class="progress-bar" style="--progress-value: 60%">
+                                <div class="progress"></div>
+                                <div class="progress-selector"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="element">
+                    <div class="sub-topic">
+                        <i class="icon fa fa-info-circle"></i>
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="element-data">
+                        <div class="skill-element">
+                            <div class="skill-name">English</div>
+                            <div class="progress-bar" style="--progress-value: 100%">
+                                <div class="progress"></div>
+                                <div class="progress-selector"></div>
+                            </div>
+                        </div>
+                        <div class="skill-element">
+                            <div class="skill-name">Turkish</div>
+                            <div class="progress-bar" style="--progress-value: 100%">
+                                <div class="progress"></div>
+                                <div class="progress-selector"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="element">
+                    <h3>Achievements</h3>
+                    <div class="element-data">
+                        <p class="data-info">
+                            <ul class="list">
+                                <li>Worked on the project ot reduce the e2e new sales time form 17 mins to 3 mins in a mahor communication company</li>
+                                <li>Led a team up-to 16 developers</li>
+                                <li>Managed a development team divided between 3 locations in 2 countries</li>
+                                <li>Developed the technicla skills of countless new joiners (ok, 15 new joiners) </li>
+                                <li>Acted as a career counseler to 6 colleague</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="element">
+                    <h3>Hobbies</h3>
+                    <div class="element-data">
+                        <div class="data-info data-grid">
+                            <div class="grid-item">
+                                <i class="icon fa fa-globe"></i>
+                                <div class="title">Travelling</div>
+                            </div>
+                            <div class="grid-item">
+                                <i class="icon fa fa-bicycle"></i>
+                                <div class="title">Cycling</div>
+                            </div>
+                            <div class="grid-item">
+                                <i class="icon fa fa-cutlery"></i>
+                                <div class="title">Experimental Cooking</div>
+                            </div>
+                            <div class="grid-item">
+                                <i class="icon fa fa-bookmark"></i>
+                                <div class="title">Reading</div>
+                            </div>
+                            <div class="grid-item">
+                                <i class="icon fa fa-camera"></i>
+                                <div class="title">Capturing happy memories</div>
+                            </div>
+                            <div class="grid-item">
+                                <i class="icon fa fa-suitcase"></i>
+                                <div class="title">More travelling</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const progressBars = document.getElementsByClassName("progress-bar")
+        for(let i = 0; i < progressBars.length; i++) {
+            // progressBar = progres    s
+        }
+    </script>
+</body>
+</html>
